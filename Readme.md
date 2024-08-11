@@ -1,7 +1,6 @@
 # Little_100的GitHub主页
 
 欢迎来到我的GitHub主页，我爱玩我的世界，我于14年开始玩的我的世界，那时候我才小学一年级
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Little100)
 
 ## 项目概览
 
@@ -24,6 +23,7 @@
 - HTML
 - C#
 - Batch
+- ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Little100)
 
 ## 项目特点
 
