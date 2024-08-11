@@ -7,13 +7,13 @@
 ### 1. [MSM (Minecraft Server Manager)](https://github.com/Little100/Minecraft_Server_Manager)
 一个正在开发中的Minecraft服务器管理应用。
 
-### 2. MAL [(Minecraft AutoLauncher)](https://github.com/Little100/Minecraft_Server_AutoBackUp)
+### 2. [MAL (Minecraft AutoLauncher)](https://github.com/Little100/Minecraft_Server_AutoBackUp)
 自动化完成部分启动步骤的Minecraft辅助启动工具。
 
-### 3. MSAB [(Minecraft Server AutoBackUp)](https://github.com/Little100/Minecraft_AutoLauncher)
+### 3. [MSAB (Minecraft Server AutoBackUp)](https://github.com/Little100/Minecraft_AutoLauncher)
 用于Minecraft服务器自动备份的工具，未来将内置于MSM中。
 
-### 4. MCPH [(Minecraft Packs Hub)](https://github.com/Little100/MCPH)
+### 4. [MCPH (Minecraft Packs Hub)](https://github.com/Little100/MCPH)
 一个集合了光影包和材质包的HTML项目，目前仍在开发中。
 
 ## 使用技术
