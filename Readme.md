@@ -2,6 +2,8 @@
 
 欢迎来到我的GitHub主页，我爱玩我的世界，我于14年开始玩的我的世界，那时候我才小学一年级
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Little100)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Little100)
+
 ## 项目概览
 
 ### 1. [MSM (Minecraft Server Manager)](https://github.com/Little100/Minecraft_Server_Manager)
