@@ -19,6 +19,9 @@
 ### 5. [MFP (Minecraft Fuck Plugin)](https://github.com/Little100/Minecraft_Fuck_Plugin)
 一个我的世界的插件 目前只测试了1.21paper服务端
 
+### 6. [GMCP(GayMCPack)](https://github.com/Little100/GayMCPack)
+一个我的世界的材质包
+
 ## 使用技术
 
 - ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Little100&show_icons=true&theme=transparent)
