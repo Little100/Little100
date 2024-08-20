@@ -14,7 +14,7 @@
 用于Minecraft服务器自动备份的工具，未来将内置于MSM中。
 
 ### 4. [MCPH (Minecraft Packs Hub)](https://github.com/Little100/MCPH)
-一个集合了光影包和材质包的HTML项目，目前仍在开发中。
+一个集合了光影包和材质包的HTML项目，目前仍在开发中(几乎放弃 有需求就当个模板)。
 
 ### 5. [MFP (Minecraft Fuck Plugin)](https://github.com/Little100/Minecraft_Fuck_Plugin)
 一个我的世界的插件 目前只测试了1.21paper服务端
