@@ -22,6 +22,9 @@
 ### 6. [GMCP(GayMCPack)](https://github.com/Little100/GayMCPack)
 一个我的世界的材质包
 
+### 7. [NC(NameChecker)](https://github.com/Little100/Namechecker)
+用于检测我的世界玩家名字的插件
+
 ## 使用技术
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Little100&show_icons=true&theme=transparent)
