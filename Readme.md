@@ -13,7 +13,7 @@
 ### 3. [MSAB (Minecraft Server AutoBackUp)](https://github.com/Little100/Minecraft_AutoLauncher)
 用于Minecraft服务器自动备份的工具，未来将内置于MSM中。
 
-### 4. [MCPH (Minecraft Packs Hub)](https://github.com/Little100/MCPH)
+### 4. [MCPH (Minecraft Packs Hub)](https://github.com/Little100/Minecraft_Pack_Hub)
 一个集合了光影包和材质包的HTML项目，目前仍在开发中(几乎放弃 有需求就当个模板)。
 
 ### 5. [MFP (Minecraft Fuck Plugin)](https://github.com/Little100/Minecraft_Fuck_Plugin)
