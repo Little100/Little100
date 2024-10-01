@@ -16,7 +16,7 @@
 ### 4. [MCPH (Minecraft Packs Hub)](https://github.com/Little100/Minecraft_Pack_Hub)
 一个集合了光影包和材质包的HTML项目，目前仍在开发中(几乎放弃 有需求就当个模板)。
 
-### 5. [MFP (Minecraft Fuck Plugin)](https://github.com/Little100/Minecraft_Fuck_Plugin)
+### 5. [MPMP (Minecraft_Player_Mating_Plugin)](https://github.com/Little100/Minecraft_Player_Mating_Plugin)
 一个我的世界的插件 目前只测试了1.21paper服务端
 
 ### 6. [GMCP(GayMCPack)](https://github.com/Little100/GayMCPack)
