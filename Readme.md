@@ -1,6 +1,5 @@
 # Little_100的GitHub主页
 
-欢迎来到我的GitHub主页，我爱玩我的世界，我于14年开始玩的我的世界，那时候我才小学一年级
 [我的个人介绍网站](https://little100.github.io/Web_Myself/)
 
 ## 项目概览
