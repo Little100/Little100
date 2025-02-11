@@ -1,6 +1,7 @@
 # Little_100的GitHub主页
 
 [我的个人介绍网站](https://little100.github.io/Web_Myself/)
+[.我爱你域名介绍网站](https://www.little100.xn--6qq986b3xl/)
 
 ## 项目概览
 
