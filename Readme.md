@@ -55,10 +55,11 @@
 
 ## 联系方式
 
-- 邮箱：[留空]
+- 邮箱：[2662308929@qq.com]
 - 社交媒体：[bilibili](https://space.bilibili.com/1492647738)
 
 ---
 
 感谢访问我的GitHub主页，希望我的项目对你有所帮助！
 最后 woshinanniang
+
