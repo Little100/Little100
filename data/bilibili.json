@@ -1,0 +1,33 @@
+{
+  "uid": 1492647738,
+  "name": "Little_100",
+  "face": "https://i0.hdslb.com/bfs/face/f93a5d997dc57b67bfa76b6fb2d1689c8c378025.jpg",
+  "sign": "亻尔女子，我是力涛意摆 粉丝群1032430138正在开发花雨庭单方块空岛复刻版 我的世界插件版匠魂2 暮色森林qwp等等等等...",
+  "level": 5,
+  "vip": true,
+  "vip_label": "年度大会员",
+  "follower": 524,
+  "following": 227,
+  "video_count": 100,
+  "categories": {
+    "gaming": 93,
+    "tech": 3,
+    "life": 2,
+    "animals": 2
+  },
+  "live_room": {
+    "roomid": 25405914,
+    "title": "日常我的世界",
+    "liveStatus": 0
+  },
+  "top_videos": [
+    {
+      "title": "Minecraft 经典模组以插件形式重生",
+      "bvid": "",
+      "pic": "",
+      "play": 0,
+      "created": 0
+    }
+  ],
+  "updated_at": "2025-01-01T00:00:00Z"
+}

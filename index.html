@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="is-loading">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Little_100 — Minecraft Ecosystem Developer</title>
+  <meta name="description" content="Little_100 的个人主页 — Minecraft 生态开发者 / 桌面应用作者 / Bilibili UP主">
+  <meta name="theme-color" content="#0a0a0f">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Noise Overlay SVG Filter -->
+  <svg style="position:absolute;width:0;height:0;">
+    <filter id="noise-filter">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </svg>
+</head>
+<body>
+
+  <!-- ============ PRELOADER ============ -->
+  <div id="preloader" class="preloader">
+    <div class="preloader__sky">
+      <div class="preloader__stars" id="preloader-stars"></div>
+    </div>
+    <div class="preloader__ground"></div>
+    <div class="preloader__content">
+      <!-- Action Scenes -->
+      <div class="preloader__scene">
+        <!-- Scene 1: Chop Tree (0-39%) -->
+        <div class="preloader__act preloader__act--active" id="act-chop">
+          <img class="preloader__target" src="assets/images/oak.png" alt="Oak">
+          <img class="preloader__tool preloader__tool--chop" src="assets/images/stone_axe.png" alt="Axe">
+          <div class="preloader__particles" id="particles-chop"></div>
+        </div>
+        <!-- Scene 2: Mine Ore (40-74%) -->
+        <div class="preloader__act" id="act-mine">
+          <img class="preloader__target" src="assets/images/diamond_ore.png" alt="Diamond Ore">
+          <img class="preloader__tool preloader__tool--mine" src="assets/images/iron_axe.png" alt="Pickaxe">
+          <div class="preloader__particles" id="particles-mine"></div>
+        </div>
+        <!-- Scene 3: Slay Dragon (75-100%) -->
+        <div class="preloader__act" id="act-slay">
+          <img class="preloader__target preloader__target--dragon" src="assets/images/end_dragon.gif" alt="Dragon">
+          <img class="preloader__tool preloader__tool--slay" src="assets/images/diamond_sword.png" alt="Sword">
+          <div class="preloader__particles" id="particles-slay"></div>
+        </div>
+      </div>
+
+      <h1 class="preloader__title">LITTLE_100</h1>
+      <div class="preloader__bar-wrap">
+        <div class="preloader__bar">
+          <div class="preloader__bar-fill" id="preloader-bar"></div>
+        </div>
+        <span class="preloader__percent" id="preloader-percent">0%</span>
+      </div>
+      <p class="preloader__stage" id="preloader-stage" data-i18n="loader.stage.0">采集木头...</p>
+      <p class="preloader__tip" id="preloader-tip" data-i18n="loader.tip">不要挖脚下的方块!</p>
+    </div>
+  </div>
+
+  <!-- ============ FIXED BORDERS ============ -->
+  <div class="site-border site-border--top"></div>
+  <div class="site-border site-border--left"></div>
+  <div class="site-border site-border--right"></div>
+
+  <!-- ============ NOISE OVERLAY ============ -->
+  <div class="noise-overlay"></div>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">Little_100</a>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#about" data-i18n="nav.about">关于</a></li>
+        <li><a href="#work" data-i18n="nav.work">作品</a></li>
+        <li><a href="#bilibili" data-i18n="nav.bilibili">B站</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">联系</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="nav__lang" id="lang-toggle" aria-label="Toggle Language">EN</button>
+        <button class="nav__burger" id="burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ MOBILE MENU ============ -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="#about" data-i18n="nav.about">关于</a></li>
+      <li><a href="#work" data-i18n="nav.work">作品</a></li>
+      <li><a href="#bilibili" data-i18n="nav.bilibili">B站</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">联系</a></li>
+    </ul>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="s-hero" id="hero">
+    <canvas id="particle-canvas" class="hero__canvas"></canvas>
+    <div class="hero__content">
+      <span class="hero__tag" data-i18n="hero.tag">MINECRAFT 生态开发者</span>
+      <h1 class="hero__title">
+        <span class="hero__title-line"><span class="hero__word">LITTLE</span></span>
+        <span class="hero__title-line"><span class="hero__word hero__word--accent">_100</span></span>
+      </h1>
+      <p class="hero__sub">
+        <span data-i18n="hero.sub1">Minecraft 生态开发者</span>
+        <span class="hero__sub-sep">/</span>
+        <span data-i18n="hero.sub2">桌面应用作者</span>
+        <span class="hero__sub-sep">/</span>
+        <span data-i18n="hero.sub3">Bilibili UP主</span>
+      </p>
+      <div class="hero__stats">
+        <div class="hero__stat">
+          <span class="hero__stat-num" data-count="0" id="stat-repos">0</span>
+          <span class="hero__stat-label" data-i18n="hero.repos">REPOS</span>
+        </div>
+        <div class="hero__stat-divider"></div>
+        <div class="hero__stat">
+          <span class="hero__stat-num" data-count="0" id="stat-fans">0</span>
+          <span class="hero__stat-label" data-i18n="hero.fans">B站粉丝</span>
+        </div>
+        <div class="hero__stat-divider"></div>
+        <div class="hero__stat">
+          <span class="hero__stat-num" data-count="0" id="stat-videos">0</span>
+          <span class="hero__stat-label" data-i18n="hero.videos">投稿视频</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <span class="hero__scroll-line"></span>
+      <span class="hero__scroll-text" data-i18n="hero.scroll">向下滚动</span>
+    </div>
+  </section>
+
+  <!-- ============ SEPARATOR 1 ============ -->
+  <div class="separator" aria-hidden="true">
+    <div class="separator__deco separator__deco--left">&#9654;</div>
+    <div class="separator__chars" id="sep-1"></div>
+    <div class="separator__deco separator__deco--right">&#9664;</div>
+  </div>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="s-about" id="about">
+    <div class="section-label reveal">
+      <span class="section-label__num">01</span>
+      <span class="section-label__line"></span>
+      <span class="section-label__text" data-i18n="nav.about">关于</span>
+    </div>
+    <div class="about__grid">
+      <div class="about__left reveal">
+        <h2 class="about__heading">
+          <span class="about__heading-line" data-i18n="about.heading.1">关于</span>
+          <span class="about__heading-line about__heading-line--accent" data-i18n="about.heading.2">我</span>
+        </h2>
+        <div class="about__age-badge">
+          <svg class="icon"><use href="assets/svg/sprite.svg#icon-calendar"/></svg>
+          <span>Born 2008.05 · <span id="age-value">17</span><span data-i18n="about.age">岁</span></span>
+        </div>
+      </div>
+      <div class="about__right">
+        <p class="about__bio about__bio--lead reveal" data-i18n="about.bio1">我是 Little_100，来自中国的 Minecraft 生态开发者。</p>
+        <p class="about__bio reveal" data-delay="100" data-i18n="about.bio2">专注于将经典 Minecraft 模组以 Spigot/Paper 插件的形式重新实现，同时打造桌面端资源包编辑器等开发工具。在 Bilibili 上分享游戏内容与技术创作。大部分项目以 GPL-3.0 协议开源，欢迎社区参与。</p>
+        <div class="about__skills reveal" data-delay="200">
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">Tauri</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Minecraft</span>
+          <span class="skill-tag">Open Source</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SEPARATOR 2 ============ -->
+  <div class="separator" aria-hidden="true">
+    <div class="separator__deco separator__deco--left">&#9654;</div>
+    <div class="separator__chars" id="sep-2"></div>
+    <div class="separator__deco separator__deco--right">&#9664;</div>
+  </div>
+
+  <!-- ============ WORK ============ -->
+  <section class="s-work s-work--compact" id="work">
+    <div class="work-sticky">
+      <div class="section-label section-label--work">
+        <span class="section-label__num">02</span>
+        <span class="section-label__line"></span>
+        <span class="section-label__text" data-i18n="nav.work">作品</span>
+      </div>
+      <!-- Gate Title (visible through arch cutout) -->
+      <div class="work-gate-title" id="work-gate-title">
+        <div class="work-gate-title__inner">
+          <span class="work-gate-title__main" data-i18n="work.gate">作品</span>
+          <span class="work-gate-title__sub" data-i18n="work.gate.sub">WORK</span>
+          <span class="work-gate-title__hint">
+            <span class="work-gate-title__arrow">&#8595;</span>
+            <span data-i18n="work.gate.hint">向下滚动</span>
+          </span>
+          <button class="work-enter-btn" id="work-enter-btn" data-i18n="work.enter3d">进入展示</button>
+        </div>
+      </div>
+      <!-- Exit button (floating, hidden by default) -->
+      <button class="work-exit-btn" id="work-exit-btn" data-i18n="work.exit3d">✕ 关闭展示</button>
+      <!-- Gate Mask SVG (evenodd arch cutout) -->
+      <div class="work-gate" id="work-gate">
+        <svg class="work-gate__svg" id="work-gate-svg" preserveAspectRatio="none">
+          <path class="work-gate__path" id="work-gate-path" fill-rule="evenodd" d=""/>
+          <path class="work-gate__grid" id="work-gate-grid" d="" fill="none"/>
+        </svg>
+      </div>
+      <!-- 3D Scene -->
+      <div class="work-scene" id="work-scene">
+        <!-- Floating background letters -->
+        <span class="work-letter" style="--lx:10%;--ly:20%">W</span>
+        <span class="work-letter" style="--lx:85%;--ly:30%">O</span>
+        <span class="work-letter" style="--lx:15%;--ly:70%">R</span>
+        <span class="work-letter" style="--lx:80%;--ly:75%">K</span>
+        <!-- Cards injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SEPARATOR 3 ============ -->
+  <div class="separator" aria-hidden="true">
+    <div class="separator__deco separator__deco--left">&#9654;</div>
+    <div class="separator__chars" id="sep-3"></div>
+    <div class="separator__deco separator__deco--right">&#9664;</div>
+  </div>
+
+  <!-- ============ BILIBILI ============ -->
+  <section class="s-bili" id="bilibili">
+    <div class="section-label reveal">
+      <span class="section-label__num">03</span>
+      <span class="section-label__line"></span>
+      <span class="section-label__text" data-i18n="nav.bilibili">B站</span>
+    </div>
+    <div class="bili__grid">
+      <!-- Avatar Column -->
+      <div class="bili__avatar-col reveal">
+        <div class="bili__avatar-wrap">
+          <img src="https://q1.qlogo.cn/g?b=qq&nk=2662308929&s=640" alt="Little_100" class="bili__avatar" loading="lazy">
+        </div>
+        <h3 class="bili__name">Little_100</h3>
+        <span class="bili__level">Lv.5</span>
+      </div>
+      <!-- Stats Column -->
+      <div class="bili__stats-col reveal" data-delay="100">
+        <div class="bili__stat-item">
+          <span class="bili__stat-num" data-count="524" id="bili-follower">0</span>
+          <span class="bili__stat-label" data-i18n="bili.follower">粉丝</span>
+        </div>
+        <div class="bili__stat-item">
+          <span class="bili__stat-num" data-count="227" id="bili-following">0</span>
+          <span class="bili__stat-label" data-i18n="bili.following">关注</span>
+        </div>
+        <div class="bili__stat-item">
+          <span class="bili__stat-num" data-count="100" id="bili-videos">0</span>
+          <span class="bili__stat-label" data-i18n="bili.videos">投稿</span>
+        </div>
+      </div>
+      <!-- Categories Column -->
+      <div class="bili__cat-col reveal" data-delay="200">
+        <h4 class="bili__cat-title" data-i18n="bili.categories">内容分区</h4>
+        <div class="bili__cat-list" id="bili-categories">
+          <!-- JS populates -->
+        </div>
+      </div>
+    </div>
+    <div class="bili__actions reveal" data-delay="300">
+      <a href="https://space.bilibili.com/1492647738" target="_blank" rel="noopener" class="btn btn--accent" data-i18n="bili.visit">访问B站空间</a>
+      <p class="bili__update-note" data-i18n="bili.update">数据由 GitHub Actions 每日自动更新</p>
+    </div>
+  </section>
+
+  <!-- ============ SEPARATOR 4 ============ -->
+  <div class="separator" aria-hidden="true">
+    <div class="separator__deco separator__deco--left">&#9654;</div>
+    <div class="separator__chars" id="sep-4"></div>
+    <div class="separator__deco separator__deco--right">&#9664;</div>
+  </div>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="s-contact" id="contact">
+    <div class="section-label reveal">
+      <span class="section-label__num">04</span>
+      <span class="section-label__line"></span>
+      <span class="section-label__text" data-i18n="nav.contact">联系</span>
+    </div>
+    <h2 class="contact__heading reveal">
+      <span class="contact__heading-line" data-i18n="contact.h1">联系</span>
+      <span class="contact__heading-line contact__heading-line--accent" data-i18n="contact.h2">我</span>
+    </h2>
+    <div class="contact__grid">
+      <!-- GitHub -->
+      <a href="https://github.com/Little100" target="_blank" rel="noopener" class="contact-card reveal">
+        <svg class="icon"><use href="assets/svg/sprite.svg#icon-github"/></svg>
+        <div class="contact-card__info">
+          <span class="contact-card__name">GitHub</span>
+          <span class="contact-card__handle">@Little100</span>
+        </div>
+        <svg class="icon icon--arrow"><use href="assets/svg/sprite.svg#icon-arrow-right"/></svg>
+      </a>
+      <!-- Bilibili -->
+      <a href="https://space.bilibili.com/1492647738" target="_blank" rel="noopener" class="contact-card reveal" data-delay="50">
+        <svg class="icon"><use href="assets/svg/sprite.svg#icon-bilibili"/></svg>
+        <div class="contact-card__info">
+          <span class="contact-card__name">Bilibili</span>
+          <span class="contact-card__handle">Little_100</span>
+        </div>
+        <svg class="icon icon--arrow"><use href="assets/svg/sprite.svg#icon-arrow-right"/></svg>
+      </a>
+      <!-- QQ Friend -->
+      <a href="tencent://message/?uin=2662308929&Site=qq&Menu=yes" class="contact-card reveal" data-delay="100">
+        <svg class="icon"><use href="assets/svg/sprite.svg#icon-qq"/></svg>
+        <div class="contact-card__info">
+          <span class="contact-card__name" data-i18n="contact.qq.friend">添加QQ好友</span>
+          <span class="contact-card__handle">2662308929</span>
+        </div>
+        <svg class="icon icon--arrow"><use href="assets/svg/sprite.svg#icon-arrow-right"/></svg>
+      </a>
+      <!-- QQ Group -->
+      <a href="https://qm.qq.com/q/fFCJ8JrXhu" target="_blank" rel="noopener" class="contact-card reveal" data-delay="150">
+        <svg class="icon"><use href="assets/svg/sprite.svg#icon-10"/></svg>
+        <div class="contact-card__info">
+          <span class="contact-card__name" data-i18n="contact.qq.group">加入QQ群</span>
+          <span class="contact-card__handle">Little_100 Community</span>
+        </div>
+        <svg class="icon icon--arrow"><use href="assets/svg/sprite.svg#icon-arrow-right"/></svg>
+      </a>
+      <!-- Website -->
+      <a href="https://www.little100.cn/" target="_blank" rel="noopener" class="contact-card reveal" data-delay="200">
+        <svg class="icon"><use href="assets/svg/sprite.svg#icon-11"/></svg>
+        <div class="contact-card__info">
+          <span class="contact-card__name">Website</span>
+          <span class="contact-card__handle">little100.cn</span>
+        </div>
+        <svg class="icon icon--arrow"><use href="assets/svg/sprite.svg#icon-arrow-right"/></svg>
+      </a>
+      <!-- Docs -->
+      <a href="https://docs.little100.cn/" target="_blank" rel="noopener" class="contact-card reveal" data-delay="250">
+        <svg class="icon"><use href="assets/svg/sprite.svg#icon-12"/></svg>
+        <div class="contact-card__info">
+          <span class="contact-card__name">Docs</span>
+          <span class="contact-card__handle">docs.little100.top</span>
+        </div>
+        <svg class="icon icon--arrow"><use href="assets/svg/sprite.svg#icon-arrow-right"/></svg>
+      </a>
+      <!-- Afdian -->
+      <a href="https://afdian.com/a/little100" target="_blank" rel="noopener" class="contact-card reveal" data-delay="300">
+        <svg class="icon"><use href="assets/svg/sprite.svg#icon-13"/></svg>
+        <div class="contact-card__info">
+          <span class="contact-card__name" data-i18n="contact.afdian">爱发电</span>
+          <span class="contact-card__handle">little100</span>
+        </div>
+        <svg class="icon icon--arrow"><use href="assets/svg/sprite.svg#icon-arrow-right"/></svg>
+      </a>
+      <!-- Email -->
+      <a href="mailto:2662308929@qq.com" class="contact-card reveal" data-delay="350">
+        <svg class="icon"><use href="assets/svg/sprite.svg#icon-mail"/></svg>
+        <div class="contact-card__info">
+          <span class="contact-card__name">Email</span>
+          <span class="contact-card__handle">2662308929@qq.com</span>
+        </div>
+        <svg class="icon icon--arrow"><use href="assets/svg/sprite.svg#icon-arrow-right"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="footer__inner">
+      <span class="footer__name">Little_100</span>
+      <span class="footer__motto" data-i18n="footer.craft">用热爱铸造</span>
+      <div class="footer__socials">
+        <a href="https://github.com/Little100" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg class="icon"><use href="assets/svg/sprite.svg#icon-github"/></svg>
+        </a>
+        <a href="https://space.bilibili.com/1492647738" target="_blank" rel="noopener" aria-label="Bilibili">
+          <svg class="icon"><use href="assets/svg/sprite.svg#icon-bilibili"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ SVG SPRITE (inline) ============ -->
+  <div style="display:none" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <symbol id="icon-inline-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></symbol>
+    </svg>
+  </div>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
