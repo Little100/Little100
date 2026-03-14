@@ -29,7 +29,7 @@ var SITE_CONFIG = {
     website:          'https://www.little100.cn/',
     websiteDisplay:   'little100.cn',
     docs:             'https://docs.little100.cn/',
-    docsDisplay:      'docs.little100.top',
+    docsDisplay:      'docs.little100.cn',
     afdian:           'https://afdian.com/a/little100',
     afdianDisplay:    'little100',
     email:            '2662308929@qq.com'
