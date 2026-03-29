@@ -1,0 +1,24 @@
+{
+  "uid": 1492647738,
+  "name": "Little_100",
+  "face": "",
+  "sign": "\n",
+  "level": 0,
+  "vip": false,
+  "vip_label": "",
+  "follower": 564,
+  "following": 229,
+  "video_count": 0,
+  "categories": {
+    "gaming": 0,
+    "tech": 0,
+    "life": 0,
+    "animals": 0
+  },
+  "live_room": {
+    "roomid": 0,
+    "title": "\n",
+    "liveStatus": 0
+  },
+  "updated_at": "2026-03-28T07:36:44Z"
+}
