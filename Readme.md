@@ -21,10 +21,13 @@
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=Little100&color=blueviolet&style=flat-square&label=Profile+Views" alt="Profile Views" />
-  <img src="https://img.shields.io/github/followers/Little100?style=flat-square&label=Followers&color=236ad3" alt="Followers" />
-  <img src="https://img.shields.io/github/stars/Little100?style=flat-square&label=Total+Stars&affiliations=OWNER&color=e3b341" alt="Total Stars" />
+  <img src="https://komarev.com/ghpvc/?username=Little100&color=8b5cf6&style=for-the-badge&label=Profile+views" alt="Profile views" />
+  &nbsp;
+  <img src="https://img.shields.io/github/followers/Little100?style=for-the-badge&label=GitHub+followers&color=2563eb&logo=github" alt="GitHub 关注者人数（与获星无关）" />
+  &nbsp;
+  <img src="https://img.shields.io/github/stars/Little100?style=for-the-badge&label=Stars+on+owned+repos&affiliations=OWNER&color=d97706&logo=github" alt="你名下仓库获得的 Star 总和" />
 </p>
+<p align="center"><sub>蓝色数字是<strong>关注者</strong>，金色是<strong>仓库获星总和</strong>；折叠区里 Trophy 的 Stars 是<strong>奖杯积分</strong>，不是 Star 条数。</sub></p>
 
 ---
 
@@ -67,14 +70,31 @@
 <details>
 <summary><b>GitHub 数据统计</b></summary>
 
+<p align="center"><sub>各卡片由不同服务生成，存在缓存与统计口径差异，数字可能与顶部徽章略有不同，属正常现象。</sub></p>
+
 <p align="center">
   <a href="https://github.com/ryo-ma/github-profile-trophy">
-    <img src="https://gh-trophy.cdnsoft.net/?username=Little100&theme=tokyonight&no-frame=false&column=7" alt="GitHub Trophy" />
-  </a><br />
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=Little100&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true" alt="GitHub Stats" /><br />
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=Little100&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" alt="Top Langs" /><br />
-  <img src="https://streak-stats.demolab.com/?user=Little100&theme=tokyonight&hide_border=true" alt="GitHub Streak" /><br />
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Little100&theme=tokyo-night&hide_border=true&area=true" alt="Activity Graph" />
+    <img src="https://gh-trophy.cdnsoft.net/?username=Little100&theme=tokyonight&no-frame=true&column=7&margin-w=10&margin-h=10" alt="GitHub Trophy" />
+  </a>
+</p>
+
+<table align="center">
+  <tr>
+    <td align="center" valign="top" width="50%">
+      <img width="420" src="https://github-readme-stats-sigma-five.vercel.app/api?username=Little100&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&card_width=420" alt="GitHub Stats" />
+    </td>
+    <td align="center" valign="top" width="50%">
+      <img width="420" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=Little100&layout=compact&theme=tokyonight&hide_border=true&langs_count=8&card_width=420" alt="Top Langs" />
+    </td>
+  </tr>
+</table>
+
+<p align="center">
+  <img width="855" src="https://streak-stats.demolab.com/?user=Little100&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
+</p>
+
+<p align="center">
+  <img width="920" src="https://github-readme-activity-graph.vercel.app/graph?username=Little100&theme=tokyo-night&hide_border=true&area=true" alt="Activity Graph" />
 </p>
 
 </details>
